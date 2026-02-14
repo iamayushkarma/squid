@@ -30,7 +30,7 @@ function GuideSection() {
         <h2 className="text-text-primary font-semibold text-5xl ">
           We're here to guide and help you at all times
         </h2>
-        <p className="text-text-secondary mt-8 text-[1.125rem]">
+        <p className="text-text-secondary mt-8 text-[1.125rem] w-4/5">
           A good design is not only aesthetically pleasing, but also functional.
           It should be able to solve the problem
         </p>

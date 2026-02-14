@@ -19,7 +19,7 @@ function CompaniesSection() {
     >
       <div className="w-4/5 mx-auto mt-32">
         <h2 className="text-text-primary text-5xl w-1/2 font-semibold mx-auto text-center leading-16">
-          Companies we Worked With Since 2015
+          Companies we Worked With in SInce 2015
         </h2>
         <div className="flex flex-wrap gap-8 justify-center mt-16">
           {companies.map((company, index) => (

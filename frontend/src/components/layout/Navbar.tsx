@@ -9,7 +9,7 @@ function Navbar() {
         <img className="w-[131.98px]" src={navlogo} />
         <div className="flex items-center gap-8">
           <Link className="text-text-secondary" to="/">
-            Home
+            Login
           </Link>
           <Button text="Download Template" />
         </div>
