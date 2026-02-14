@@ -1,3 +1,4 @@
+import CompaniesSection from "@/components/sections/CompaniesSection";
 import FeatureSection from "@/components/sections/FeatureSection";
 import GridMask from "@/components/sections/GridMask";
 import GuideSection from "@/components/sections/GuideSection";
@@ -10,6 +11,7 @@ function Home() {
       <GridMask />
       <FeatureSection />
       <GuideSection />
+      <CompaniesSection />
     </div>
   );
 }
