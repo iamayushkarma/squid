@@ -7,7 +7,10 @@ import HeroEllipsThree from "/svg/hero-ellips-three.svg";
 
 function HeroSection() {
   return (
-    <section className="relative h-svh w-full bg-background flex justify-center items-center text-center">
+    <section
+      id="home"
+      className="relative h-svh w-full bg-background flex justify-center items-center text-center"
+    >
       <img className="absolute z-5 top-0" src={Hero} />
       <img className="absolute top-[1%]" src={Ellips} />
       <img className="absolute left-[4%] top-[60%] z-10" src={HeroEllipsOne} />

@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 
 function GetInTouch() {
   return (
-    <div className="h-svh relative ">
+    <div className="relative pb-16">
       {/* Map section */}
       <div className="w-[69.3rem] flex py-4 align-grid h-106 rounded-[2.5rem] -top-50 absolute mx-auto bg-linear-to-r from-[#FF9898] to-[#8054ff]">
         <div className="w-1/2 pl-30 flex gap-8 items-start justify-center flex-col">
@@ -28,7 +28,7 @@ function GetInTouch() {
           <img src={Glob} />
           <img className="absolute -top-8 -left-12 z-10" src={HeroEllipsTwo} />
           <img
-            className="absolute -bottom-20 -right-2.5 z-10"
+            className="absolute -bottom-12 -right-2.5 z-10"
             src={HeroEllipsThree}
           />
         </div>

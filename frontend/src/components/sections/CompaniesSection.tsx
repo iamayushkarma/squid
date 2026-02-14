@@ -13,7 +13,10 @@ const companies = [Smile, Urban, Natural, Wave, happy, Alise];
 
 function CompaniesSection() {
   return (
-    <div className="flex flex-col items-center h-[45.35rem] bg-background-secondary">
+    <div
+      id="section-three"
+      className="flex flex-col items-center h-[45.35rem] bg-background-secondary"
+    >
       <div className="w-4/5 mx-auto mt-32">
         <h2 className="text-text-primary text-5xl w-1/2 font-semibold mx-auto text-center leading-16">
           Companies we Worked With Since 2015

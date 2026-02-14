@@ -21,7 +21,7 @@ interface FeatureBoxProp {
 
 function FeatureSection() {
   return (
-    <section className="w-4/5 mx-auto">
+    <section id="section-one" className="w-4/5 mx-auto">
       {/* Content */}
       <div>
         <h2 className="font-semibold text-5xl text-text-primary">
