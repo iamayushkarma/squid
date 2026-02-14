@@ -17,8 +17,9 @@ function GuideSection() {
           <img className="absolute top-52 left-36" src={Gear} />
           <img className="absolute top-92 left-[8.7rem]" src={Point} />
           <img className="absolute top-118 left-56" src={Studio} />
-          <img className="absolute top-[67%] left-[39.5%]" src={Point} />
-          <img className="absolute top-[35%] left-[41.5%]" src={Mailchimp} />
+          <img className="absolute top-114 left-114" src={Point} />
+          <img className="absolute top-60 left-120" src={Mailchimp} />
+          <img className="absolute top-36.5 left-98" src={Point} />
         </div>
       </div>
       {/* Content section */}
