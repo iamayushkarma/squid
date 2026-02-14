@@ -9,8 +9,8 @@ export default {
         primary: {
           DEFAULT: "var(--primary)",
         },
-        secondary: "var(--secondary)",
         background: "var(--background)",
+        secondary: "var(--background-secondary)",
         text: {
           primary: "var(--text-primary)",
           secondary: "var(--text-secondary)",

@@ -1,3 +1,4 @@
+import FeatureSection from "@/components/sections/FeatureSection";
 import GridMask from "@/components/sections/GridMask";
 import HeroSection from "@/components/sections/HeroSection";
 function Home() {
@@ -5,6 +6,7 @@ function Home() {
     <div>
       <HeroSection />
       <GridMask />
+      <FeatureSection />
     </div>
   );
 }
