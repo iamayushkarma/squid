@@ -1,4 +1,5 @@
 import type { User } from "@/types/user.ts";
+import { nanoid } from "nanoid";
 
 const setUser = (user: User) =>
   localStorage.setItem("user", JSON.stringify(user));
@@ -6,7 +7,10 @@ const setUser = (user: User) =>
 const getUser = (): User | null =>
   JSON.parse(localStorage.getItem("user") || "null");
 
-const setToken = () => localStorage.setItem("auth_token", "demo-token");
+const setToken = () => {
+  const token = nanoid();
+  localStorage.setItem("auth_token", token);
+};
 
 const getToken = () => localStorage.getItem("auth_token");
 
