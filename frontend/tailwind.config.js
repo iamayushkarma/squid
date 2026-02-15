@@ -9,14 +9,22 @@ export default {
         primary: {
           DEFAULT: "var(--primary)",
         },
-        background: "var(--background)",
-        secondary: "var(--background-secondary)",
+
+        background: {
+          DEFAULT: "var(--color-background)",
+          secondary: "var(--color-background-secondary)",
+          light: "var(--color-background-light)",
+          secondaryLight: "var(--color-background-secondary-light)",
+        },
+        border: {
+          dark: "var(--color-border-dark)",
+          light: "var(--color-border-light)",
+        },
         text: {
-          primary: "var(--text-primary)",
-          secondary: "var(--text-secondary)",
-          tertiary: "var(--text-tertiary)",
-          disabled: "var(--text-disabled)",
-          onPrimary: "var(--text-on-primary)",
+          primary: "var(--color-text-primary)",
+          secondary: "var(--color-text-secondary)",
+          primaryLight: "var(--color-text-primary-light)",
+          secondaryLight: "var(--color-text-secondary-light)",
         },
       },
     },

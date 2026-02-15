@@ -1,92 +1,62 @@
+import UserProfileCard from "@/dashboard/components/UserProfileCard";
 import { useUsers } from "@/hooks/useUsers";
-import { Link } from "react-router-dom";
-import StatCard from "@/dashboard/components/StatCard";
-import StatCardSkeleton from "@/dashboard/components/StatCardSkeleton";
-import UserTableSkeleton from "@/dashboard/components/UserTableSkeleton";
+import { User, Building2 } from "lucide-react";
+import UserList from "@/dashboard/components/UserList";
 
-export default function DashboardHome() {
-  const { users, loading, error } = useUsers();
+const listHeading = ["User", "Email", "Company Name", "City"];
+function DashboardHome() {
+  const { users } = useUsers();
 
-  // Calculate stats
-  const totalUsers = users.length;
-  const uniqueCompanies = new Set(users.map((user) => user.company.name)).size;
-  const uniqueCities = new Set(users.map((user) => user.address.city)).size;
-  const totalWebsites = users.filter((user) => user.website).length;
+  const UserProfile = [
+    {
+      icon: <User className="text-blue-600" />,
+      title: "Total Users",
+      value: users.length,
+    },
+    {
+      icon: <Building2 className="text-blue-600" />,
+      title: "Total Companies",
+      value: users.length,
+    },
+  ];
+  console.log(users);
 
   return (
-    <div className="p-6">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-semibold text-text-primary mb-2">
-          Dashboard
-        </h1>
-        <p className="text-text-secondary">
-          Welcome back! Here's your overview
-        </p>
-      </div>
-
-      {/* Error State */}
-      {error && (
-        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/50 rounded-lg">
-          <p className="text-red-500">{error}</p>
-        </div>
-      )}
-
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        {loading ? (
-          <>
-            <StatCardSkeleton />
-            <StatCardSkeleton />
-            <StatCardSkeleton />
-            <StatCardSkeleton />
-          </>
-        ) : (
-          <>
-            <StatCard title="Total Users" value={totalUsers} icon="👥" />
-            <StatCard title="Companies" value={uniqueCompanies} icon="🏢" />
-            <StatCard title="Cities" value={uniqueCities} icon="🌍" />
-            <StatCard title="Websites" value={totalWebsites} icon="🌐" />
-          </>
-        )}
-      </div>
-
-      {/* Users Section */}
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-semibold text-text-primary">
-            Recent Users
-          </h2>
-          <Link
-            to="/dashboard/users"
-            className="text-text-primary hover:underline text-sm"
-          >
-            View all →
-          </Link>
-        </div>
-
-        {loading ? (
-          <UserTableSkeleton />
-        ) : (
-          <div className="space-y-4">
-            {users.slice(0, 5).map((user) => (
-              <div
-                key={user.id}
-                className="bg-background-secondary p-4 rounded-lg hover:bg-background transition-colors"
-              >
-                <h3 className="font-semibold text-text-primary text-lg">
-                  {user.name}
-                </h3>
-                <p className="text-text-secondary text-sm">@{user.username}</p>
-                <p className="text-text-secondary text-sm">{user.email}</p>
-                <p className="text-text-secondary text-sm mt-2">
-                  {user.company.name} • {user.address.city}
-                </p>
-              </div>
-            ))}
+    <div className="h-full p-10 bg-background-secondary-light dark:bg-background overflow-hidden">
+      {/* UserProfile card */}
+      <div className="flex gap-3">
+        {UserProfile.map((card, index) => (
+          <div key={index}>
+            <UserProfileCard
+              icon={card.icon}
+              title={card.title}
+              value={card.value}
+            />
           </div>
-        )}
+        ))}
+      </div>
+      {/* User list */}
+      <div className="bg-background-light border border-border-light dark:border-border-dark dark:bg-background-secondary rounded-2xl mt-8">
+        <div className="flex justify-between items-center px-7 py-4 text-text-primary-light dark:text-text-primary">
+          <h3 className="text-lg font-semibold">Recent User</h3>
+          <div className="text-sm font-medium">View all</div>
+        </div>
+        <div className="grid bg-background-secondary-light dark:bg-[#1c1c20] text-text-secondary border border-border-light dark:border-border-dark dark:text-text-secondary-light w-full grid-cols-[30%_30%_20%_20%] px-7 py-4">
+          {listHeading.map((heading, index) => (
+            <div className="uppercase text-sm font-medium" key={index}>
+              {heading}
+            </div>
+          ))}
+        </div>
+
+        {users.slice(0, 3).map((user) => (
+          <div key={user.id}>
+            <UserList user={user} />
+          </div>
+        ))}
       </div>
     </div>
   );
 }
+
+export default DashboardHome;

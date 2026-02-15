@@ -3,6 +3,5 @@ import type { ApiUser } from "@/types/user";
 
 export const fetchUsers = async (): Promise<ApiUser[]> => {
   const response = await api.get<ApiUser[]>("/users");
-  console.log(response.data);
   return response.data;
 };

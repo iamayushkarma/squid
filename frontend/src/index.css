@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@custom-variant dark (&:where(.dark, .dark *));
 html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -22,10 +22,18 @@ body {
   position: relative;
 }
 @theme {
-  /* background color */
   --color-background: #000000;
   --color-background-secondary: #18181c;
-  /* text color */
+
+  --color-background-light: #ffffff;
+  --color-background-secondary-light: #f5f6f8;
+
   --color-text-primary: #ffffff;
   --color-text-secondary: #9e9e9e;
+
+  --color-text-primary-light: #111827;
+  --color-text-secondary-light: #6b7280;
+
+  --color-border-dark: #262626;
+  --color-border-light: #d1d5db;
 }
