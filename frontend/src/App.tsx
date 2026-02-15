@@ -6,6 +6,8 @@ import LoginPage from "@/pages/LoginPage";
 import ProtectedRoute from "@/routes/ProtectedRoute";
 import DashboardLayout from "@/dashboard/layout/DashboardLayout";
 import DashboardHome from "@/dashboard/pages/DashboardHome";
+import Users from "@/dashboard/pages/UsersPage";
+import Settings from "@/dashboard/components/users/Settings";
 import PageNotFound from "@/pages/PageNotFound";
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         }
       >
         <Route index element={<DashboardHome />} />
+        <Route path="users" element={<Users />} />
+        <Route path="settings" element={<Settings />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
