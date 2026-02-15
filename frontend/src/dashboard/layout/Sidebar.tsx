@@ -70,10 +70,10 @@ function Sidebar() {
       {/* Logout button */}
       <div
         onClick={logout}
-        className="flex items-center absolute bottom-0 p-4 gap-2 text-red-500"
+        className="flex items-center absolute bottom-0 p-4 gap-2 text-red-400 hover:text-red-600"
       >
-        <LogOut className="size-5" />
-        <button className="text-sm">Logout</button>
+        <LogOut className="size-5 cursor-pointer " />
+        <button className="text-sm cursor-pointer">Logout</button>
       </div>
     </section>
   );
