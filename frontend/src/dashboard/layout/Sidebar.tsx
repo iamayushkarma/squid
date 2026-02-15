@@ -2,7 +2,7 @@ import LightLogo from "/svg/light-logo.svg";
 import DarkLogo from "/svg/dark-logo.svg";
 import { useTheme } from "@/hooks/useTheme";
 import { LayoutDashboard, User, Settings, LogOut } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAuthContext } from "@/hooks/useAuthContext";
 
 const SideBarLinks = [
@@ -32,7 +32,7 @@ function Sidebar() {
     <section className="h-svh relative border-r border-r-border-light dark:border-border-dark ">
       <div className="border-b border-border-light dark:border-border-dark py-5 px-3">
         {/* Logo */}
-        <div className="py-4 px-3 flex items-center gap-3">
+        <Link to="/dashboard" className="py-4 px-3 flex items-center gap-3">
           {!lightTheme ? (
             <img src={LightLogo} className="size-8 " />
           ) : (
@@ -41,7 +41,7 @@ function Sidebar() {
           <h2 className="font-semibold text-2xl text-[#313139] dark:text-text-primary">
             Squid
           </h2>
-        </div>
+        </Link>
         {/* Dashboard links */}
         <div className="flex gap-2 flex-col mt-8 ">
           {SideBarLinks.map((item, index) => (
