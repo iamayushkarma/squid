@@ -1,10 +1,13 @@
 import { useState } from "react";
+import type { ChangeEvent } from "react";
 
 interface AuthInputProps {
   label: string;
   id: string;
   type?: "text" | "email" | "password";
   placeholder: string;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
   showPasswordToggle?: boolean;
 }
@@ -14,6 +17,8 @@ function AuthInput({
   id,
   type = "text",
   placeholder,
+  value,
+  onChange,
   required = false,
   showPasswordToggle = false,
 }: AuthInputProps) {
@@ -38,6 +43,8 @@ function AuthInput({
           id={id}
           name={id}
           placeholder={placeholder}
+          value={value}
+          onChange={onChange}
           required={required}
           type={inputType}
         />

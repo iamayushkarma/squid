@@ -1,7 +1,5 @@
-import React from "react";
-
 function DashboardHome() {
-  return <div>Home</div>;
+  return <div className="text-text-primary">Dashboard home</div>;
 }
 
 export default DashboardHome;

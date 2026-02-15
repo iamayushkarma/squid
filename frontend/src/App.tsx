@@ -6,6 +6,7 @@ import LoginPage from "@/pages/LoginPage";
 import ProtectedRoute from "@/routes/ProtectedRoute";
 import DashboardLayout from "@/dashboard/layout/DashboardLayout";
 import DashboardHome from "@/dashboard/pages/DashboardHome";
+import PageNotFound from "@/pages/PageNotFound";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       >
         <Route index element={<DashboardHome />} />
       </Route>
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 }

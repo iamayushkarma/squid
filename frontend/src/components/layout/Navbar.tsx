@@ -8,8 +8,8 @@ function Navbar() {
       <div className="w-3/4 mx-auto mt-8 flex  justify-between">
         <img className="w-[131.98px]" src={navlogo} />
         <div className="flex items-center gap-8">
-          <Link className="text-text-secondary" to="/">
-            Login
+          <Link className="text-text-secondary" to="/signup">
+            Sign up
           </Link>
           <Button text="Download Template" />
         </div>
