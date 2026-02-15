@@ -77,7 +77,7 @@ function Users() {
   };
 
   return (
-    <div className="h-full p-10 bg-background-secondary-light dark:bg-background select-none">
+    <div className="h-full p-10 bg-background-secondary-light dark:bg-background ">
       <div className="bg-background-light border border-border-light dark:border-border-dark dark:bg-background-secondary rounded-2xl mt-8">
         <div className="flex justify-between items-center px-7 py-4 text-text-primary-light dark:text-text-primary">
           <h3 className="text-lg font-semibold">Recent User</h3>
