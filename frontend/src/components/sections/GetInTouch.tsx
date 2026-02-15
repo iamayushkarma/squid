@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 
 function GetInTouch() {
   return (
-    <div className="relative pb-16">
+    <div id="section-three" className="relative pb-16">
       {/* Map section */}
       <div className="w-[69.3rem] flex py-4 align-grid h-106 rounded-[2.5rem] -top-50 absolute mx-auto bg-linear-to-r from-[#FF9898] to-[#8054ff]">
         <div className="w-[55%] pl-26 flex gap-4 items-start justify-center flex-col">
@@ -15,7 +15,7 @@ function GetInTouch() {
           <h3 className="font-semibold text-5xl text-text-primary leading-14">
             Fell Free to Join our 15 Days Free Trial
           </h3>
-          <button className="px-7 mt-2 py-3 bg-background text-text-primary rounded-[5px] text-[.88rem]">
+          <button className="px-7 mt-2 py-3 bg-background hover:bg-background/90 transition-all duration-200 text-text-primary rounded-[5px] text-[.88rem]">
             Download Template
           </button>
         </div>

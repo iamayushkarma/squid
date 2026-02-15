@@ -14,7 +14,7 @@ const companies = [Smile, Urban, Natural, Wave, happy, Alise];
 function CompaniesSection() {
   return (
     <div
-      id="section-three"
+      id="section-two"
       className="flex flex-col items-center h-[45.35rem] bg-background-secondary"
     >
       <div className="w-4/5 mx-auto mt-32">

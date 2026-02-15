@@ -1,6 +1,6 @@
 import UserProfileCard from "@/dashboard/components/UserProfileCard";
 import { useUsers } from "@/hooks/useUsers";
-import { User, Building2 } from "lucide-react";
+import { User, Building2, MapPinCheckInside, Globe } from "lucide-react";
 import UserList from "@/dashboard/components/UserList";
 import { Link } from "react-router-dom";
 import UserProfileCardSkeleton from "@/dashboard/components/UserProfileCardSkeleton";
@@ -10,6 +10,9 @@ const listHeading = ["User", "Email", "Company Name", "City"];
 function DashboardHome() {
   const { users, loading } = useUsers();
 
+  const totalCompanies = new Set(users.map((user) => user.company.name)).size;
+  const totalCities = new Set(users.map((user) => user.address.city)).size;
+  const totalWebsites = users.filter((u) => u.website).length;
   const UserProfile = [
     {
       icon: <User className="text-blue-600" />,
@@ -19,7 +22,17 @@ function DashboardHome() {
     {
       icon: <Building2 className="text-blue-600" />,
       title: "Total Companies",
-      value: users.length,
+      value: totalCompanies,
+    },
+    {
+      icon: <MapPinCheckInside className="text-blue-600" />,
+      title: "Total Locations",
+      value: totalCities,
+    },
+    {
+      icon: <Globe className="text-blue-600" />,
+      title: "Connected Websites",
+      value: totalWebsites,
     },
   ];
   console.log(users);
@@ -30,6 +43,8 @@ function DashboardHome() {
       <div className="flex gap-3">
         {loading ? (
           <>
+            <UserProfileCardSkeleton />
+            <UserProfileCardSkeleton />
             <UserProfileCardSkeleton />
             <UserProfileCardSkeleton />
           </>
@@ -64,6 +79,7 @@ function DashboardHome() {
 
         {loading ? (
           <>
+            <UserListSkeleton />
             <UserListSkeleton />
             <UserListSkeleton />
             <UserListSkeleton />

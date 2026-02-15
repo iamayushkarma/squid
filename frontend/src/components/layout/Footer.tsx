@@ -2,6 +2,7 @@ import LightLogo from "/svg/light-logo.svg";
 import Twitter from "/svg/twitter.svg";
 import Discord from "/svg/discord.svg";
 import Linkedin from "/svg/linkedin.svg";
+import { Link } from "react-router-dom";
 
 type FooterLinksProp = {
   index: number;
@@ -33,7 +34,9 @@ function Footer() {
         <div className="w-4/5 mx-auto py-12 flex">
           {/* Logo and sub-heading section  */}
           <div className="w-[60%] flex justify-center flex-col">
-            <img src={LightLogo} className="w-14" alt="Logo" />
+            <Link to="/">
+              <img src={LightLogo} className="w-14" alt="Logo" />
+            </Link>
             <p className="w-[45%] text-text-secondary mt-8 text-[.88rem]">
               A good design is not only aesthetically pleasing, but also
               functional. It should be able to solve the problem
@@ -51,7 +54,7 @@ function Footer() {
                   className="text-text-secondary flex flex-col mt-3"
                 >
                   {footerLinks.map((text, index) => (
-                    <li className="py-1.5 text-[.88rem]">
+                    <li className="py-1.5 text-[.88rem] transition-all duration-150 hover:text-text-primary ">
                       <a href={text.link} key={index}>
                         {text.name}
                       </a>
@@ -86,9 +89,12 @@ function FooterLinks({ index, logo }: FooterLinksProp) {
   return (
     <div
       key={index}
-      className="size-10 bg-background-secondary flex items-center justify-center rounded-2xl"
+      className="size-10 group bg-background-secondary flex items-center justify-center rounded-2xl"
     >
-      <img src={logo} />
+      <img
+        className="group-hover:scale-[1.12] transition-all duration-250"
+        src={logo}
+      />
     </div>
   );
 }

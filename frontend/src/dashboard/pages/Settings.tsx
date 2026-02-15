@@ -97,7 +97,7 @@ function Settings() {
         {/* Success Message */}
         {saved && (
           <div className="flex items-center gap-3 p-4 bg-green-500/10 border border-green-500/50 rounded-lg animate-in fade-in slide-in-from-top-2 duration-300">
-            <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center shrink-0">
               <svg
                 className="w-5 h-5 text-white"
                 fill="none"
@@ -140,7 +140,7 @@ function Settings() {
                   id="name"
                   value={profile.name}
                   onChange={handleChange}
-                  placeholder="John Doe"
+                  placeholder="Ayush karma"
                   className={`w-full pl-11 pr-4 py-3 bg-background-secondary-light dark:bg-background border ${
                     errors.name
                       ? "border-red-500"
@@ -168,7 +168,7 @@ function Settings() {
                   id="email"
                   value={profile.email}
                   onChange={handleChange}
-                  placeholder="john@example.com"
+                  placeholder="ayushkarma.dev@gmail.com"
                   className={`w-full pl-11 pr-4 py-3 bg-background-secondary-light dark:bg-background border ${
                     errors.email
                       ? "border-red-500"
@@ -183,7 +183,7 @@ function Settings() {
 
             {/* Info Note - No Box */}
             <div className="flex items-start gap-3 pt-2">
-              <Info size={18} className="text-blue-500 mt-0.5 flex-shrink-0" />
+              <Info size={18} className="text-blue-500 mt-0.5 shrink-0" />
               <p className="text-sm text-text-secondary-light dark:text-text-secondary">
                 These changes will update your profile information and persist
                 across sessions.
@@ -194,7 +194,7 @@ function Settings() {
             <div className="pt-4 flex gap-3">
               <button
                 type="submit"
-                className="group relative flex items-center gap-2 px-8 py-3 hover:bg-blue-500 bg-blue-600 text-white font-semibold rounded-lg overflow-hidden transition-all  active:scale-100"
+                className="group relative flex items-center gap-2 px-8 py-3 hover:bg-blue-600 bg-blue-400 text-white font-semibold rounded-lg overflow-hidden transition-all duration-200 active:scale-100"
               >
                 <span className="relative z-10">Save Changes</span>
               </button>
@@ -235,31 +235,6 @@ function Settings() {
 
             {/* Theme Toggle */}
             <ThemeToggler />
-          </div>
-        </div>
-
-        {/* Danger Zone */}
-        <div className="bg-background-light dark:bg-background-secondary p-8 rounded-2xl border border-border-light dark:border-white/5">
-          <h2 className="text-xl font-semibold text-red-500 mb-6">
-            Danger Zone
-          </h2>
-
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-semibold text-text-primary-light dark:text-text-primary mb-1">
-                Clear Profile Data
-              </h3>
-              <p className="text-sm text-text-secondary-light dark:text-text-secondary">
-                Remove your saved profile information
-              </p>
-            </div>
-
-            <button
-              onClick={handleClearData}
-              className="px-5 py-2.5 bg-red-500/10 text-red-500 font-semibold rounded-lg hover:bg-red-500 hover:text-white transition-all border border-red-500/50 hover:border-red-500"
-            >
-              Clear Data
-            </button>
           </div>
         </div>
       </div>

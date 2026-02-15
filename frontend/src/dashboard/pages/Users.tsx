@@ -1,7 +1,7 @@
 import UserListSkeleton from "@/dashboard/components/UserListSkeleton";
 import UserList from "@/dashboard/components/UserList";
 import { useUsers } from "@/hooks/useUsers";
-import { SearchButton } from "@/dashboard/components/SearchButton";
+import { SearchBar } from "@/dashboard/components/SearchBar";
 import { ArrowUpZA } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Pagination from "@/dashboard/components/Pagination";
@@ -83,7 +83,7 @@ function Users() {
           <h3 className="text-lg font-semibold">Recent User</h3>
 
           <div className="flex items-center gap-4">
-            <SearchButton value={search} onChange={setSearch} />
+            <SearchBar value={search} onChange={setSearch} />
 
             <div ref={dropDownRef} className="relative">
               <div
@@ -98,13 +98,18 @@ function Users() {
                 <div className="absolute right-0 mt-2 flex flex-col w-36 bg-background-secondary-light dark:bg-background-secondary border border-border-light dark:border-border-dark shadow-lg rounded-md overflow-hidden z-10">
                   <button
                     onClick={() => handleSortSelect("asc")}
-                    className="text-left hover:bg-gray-200 dark:hover:bg-background/50 px-2.5 py-2 text-sm"
+                    className="w-full text-left px-2.5 py-2 text-sm
+                  hover:bg-gray-200 dark:hover:bg-background/50
+                    focus:outline-none focus:bg-gray-200 dark:focus:bg-background/50"
                   >
                     From A-Z
                   </button>
+
                   <button
                     onClick={() => handleSortSelect("desc")}
-                    className="text-left hover:bg-gray-200 dark:hover:bg-background/50 px-2.5 py-2 text-sm"
+                    className="w-full text-left px-2.5 py-2 text-sm
+                    hover:bg-gray-200 dark:hover:bg-background/50
+                    focus:outline-none focus:bg-gray-200 dark:focus:bg-background/50"
                   >
                     From Z-A
                   </button>

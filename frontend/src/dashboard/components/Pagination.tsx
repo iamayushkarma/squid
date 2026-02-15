@@ -15,11 +15,11 @@ function Pagination({
         <div
           key={index}
           onClick={() => onPageChange(index)}
-          className={`px-2 py-0.5 cursor-pointer flex items-center rounded-sm
+          className={`size-7 text-sm justify-center border border-border-light dark:border-white/10 shadow-md cursor-pointer flex items-center rounded-sm
             ${
               currentPage === index
                 ? "bg-blue-600 text-white"
-                : "bg-background-secondary-light dark:bg-background-secondary"
+                : "bg-background-light dark:bg-background-secondary"
             }
           `}
         >

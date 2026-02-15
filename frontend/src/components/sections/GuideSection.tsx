@@ -8,10 +8,7 @@ import Button from "../ui/Button";
 
 function GuideSection() {
   return (
-    <section
-      id="section-two"
-      className="w-4/5 relative mx-auto flex gap-5 mt-10 space-y-10"
-    >
+    <section className="w-4/5 relative mx-auto flex gap-5 mt-10 space-y-10">
       {/* Orbit section */}
       <div>
         <img src={Orbit} />
