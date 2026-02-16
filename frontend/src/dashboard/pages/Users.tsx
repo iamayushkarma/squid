@@ -5,11 +5,14 @@ import { SearchBar } from "@/dashboard/components/SearchBar";
 import { ArrowUpZA } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Pagination from "@/dashboard/components/Pagination";
+import type { ApiUser } from "@/types/user";
+import UserDetailModal from "../components/UserDetailModal";
 
 function Users() {
   const { users, loading } = useUsers();
   const [isSortDropdownOpen, setisSortDropdownOpen] = useState(false);
-  const listHeading = ["User", "Email", "Company Name", "City"];
+  const [selectedUser, setSelectedUser] = useState<ApiUser | null>(null);
+  const listHeading = ["User", "Email", "Company Name", "City", "Actions"];
   const [currentPage, setCurrentPage] = useState(0);
   const [search, setSearch] = useState("");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>(null);
@@ -119,9 +122,12 @@ function Users() {
           </div>
         </div>
 
-        <div className="grid bg-background-secondary-light dark:bg-[#1c1c20] text-text-secondary border border-border-light dark:border-border-dark dark:text-text-secondary-light w-full grid-cols-[30%_30%_20%_20%] px-7 py-4">
+        <div className="grid bg-background-secondary-light dark:bg-[#1c1c20] text-text-secondary border border-border-light dark:border-border-dark dark:text-text-secondary-light w-full grid-cols-[25%_25%_20%_15%_15%]  px-7 py-4">
           {listHeading.map((heading, index) => (
-            <div className="uppercase text-sm font-medium" key={index}>
+            <div
+              className="uppercase text-xs font-semibold tracking-wide"
+              key={index}
+            >
               {heading}
             </div>
           ))}
@@ -139,7 +145,13 @@ function Users() {
             No users found
           </div>
         ) : (
-          currentUsers.map((user) => <UserList key={user.id} user={user} />)
+          currentUsers.map((user) => (
+            <UserList
+              key={user.id}
+              user={user}
+              onClick={() => setSelectedUser(user)}
+            />
+          ))
         )}
       </div>
 
@@ -148,6 +160,12 @@ function Users() {
           totalPages={numberOfPages}
           currentPage={currentPage}
           onPageChange={handlePageChange}
+        />
+      )}
+      {selectedUser && (
+        <UserDetailModal
+          user={selectedUser}
+          onClose={() => setSelectedUser(null)}
         />
       )}
     </div>

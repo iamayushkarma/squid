@@ -5,10 +5,14 @@ import UserList from "@/dashboard/components/UserList";
 import { Link } from "react-router-dom";
 import UserProfileCardSkeleton from "@/dashboard/components/UserProfileCardSkeleton";
 import UserListSkeleton from "@/dashboard/components/UserListSkeleton";
+import { useState } from "react";
+import type { ApiUser } from "@/types/user";
+import UserDetailModal from "../components/UserDetailModal";
 
-const listHeading = ["User", "Email", "Company Name", "City"];
+const listHeading = ["User", "Email", "Company Name", "City", "Actions"];
 function DashboardHome() {
   const { users, loading } = useUsers();
+  const [selectedUser, setSelectedUser] = useState<ApiUser | null>(null);
 
   const totalCompanies = new Set(users.map((user) => user.company.name)).size;
   const totalCities = new Set(users.map((user) => user.address.city)).size;
@@ -69,9 +73,12 @@ function DashboardHome() {
           </Link>
         </div>
 
-        <div className="grid bg-background-secondary-light dark:bg-[#1c1c20] text-text-secondary border border-border-light dark:border-border-dark dark:text-text-secondary-light w-full grid-cols-[30%_30%_20%_20%] px-7 py-4">
+        <div className="grid bg-background-secondary-light dark:bg-[#1c1c20] text-text-secondary border border-border-light dark:border-border-dark dark:text-text-secondary-light w-full grid-cols-[25%_25%_20%_15%_15%]  px-7 py-4">
           {listHeading.map((heading, index) => (
-            <div className="uppercase text-sm font-medium" key={index}>
+            <div
+              className="uppercase text-xs font-semibold tracking-wide"
+              key={index}
+            >
               {heading}
             </div>
           ))}
@@ -87,9 +94,21 @@ function DashboardHome() {
         ) : (
           users
             .slice(0, 3)
-            .map((user) => <UserList key={user.id} user={user} />)
+            .map((user) => (
+              <UserList
+                key={user.id}
+                user={user}
+                onClick={() => setSelectedUser(user)}
+              />
+            ))
         )}
       </div>
+      {selectedUser && (
+        <UserDetailModal
+          user={selectedUser}
+          onClose={() => setSelectedUser(null)}
+        />
+      )}
     </div>
   );
 }
