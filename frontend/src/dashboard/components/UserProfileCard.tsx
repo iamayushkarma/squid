@@ -11,10 +11,12 @@ function UserProfileCard({ icon, title, value }: UserProfileCard) {
   return (
     <div
       onClick={() => navigate("/dashboard/users")}
-      className="p-5 min-w-44 rounded-lg bg-background-light dark:bg-background-secondary border border-border-light dark:border-border-dark"
+      className="p-5 group min-w-44 rounded-lg bg-background-light dark:bg-background-secondary border border-border-light dark:border-border-dark"
     >
-      <div className="p-2 bg-[#eeedfd] dark:bg-[#1f2d47] rounded-lg w-10">
-        {icon}
+      <div className="p-2  bg-[#eeedfd] dark:bg-[#1f2d47] rounded-lg w-10">
+        <div className="group-hover:scale-[1.15] transition-all duration-200">
+          {icon}
+        </div>
       </div>
       <div className="mt-5">
         <div className="text-text-secondary-light dark:text-text-secondary text-sm">
