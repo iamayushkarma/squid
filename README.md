@@ -522,25 +522,6 @@ If given more time, here are improvements to consider:
 
 ---
 
-## 📦 Submission Checklist
-
-- [x] Public GitHub repository
-- [x] Live deployment on Vercel
-- [x] Comprehensive README with:
-  - [x] Setup instructions
-  - [x] Features checklist
-  - [x] Screenshots (to be added)
-  - [x] Design decisions and tradeoffs
-- [ ] 10-minute screen recorded demo video
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
----
-
 ## 👨‍💻 Author
 
 **Ayush Karma**
@@ -560,5 +541,3 @@ This project is licensed under the MIT License.
 - [Vite](https://vitejs.dev/) - Build tool
 
 ---
-
-**Built for the MERN Frontend Shortlisting Project** | Developed in 3 days as a demonstration of React, TypeScript, and modern web development practices.
