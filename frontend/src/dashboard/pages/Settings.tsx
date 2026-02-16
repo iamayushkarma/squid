@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "@/hooks/useTheme";
-import { User, Mail, Save, Moon, Sun, Info } from "lucide-react";
+import { User, Mail, Info } from "lucide-react";
 import { getUser, setUser } from "@/utils/auth";
 import type { User as UserType } from "@/types/user";
 import ThemeToggler from "@/components/ui/ThemeToggler";
+import { toast } from "react-hot-toast";
 
 function Settings() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   const [profile, setProfile] = useState<UserType>({
     name: "",
     email: "",
@@ -17,6 +18,15 @@ function Settings() {
     name: "",
     email: "",
   });
+  const [originalProfile, setOriginalProfile] = useState<UserType | null>(null);
+
+  useEffect(() => {
+    const savedUser = getUser();
+    if (savedUser) {
+      setProfile(savedUser);
+      setOriginalProfile(savedUser);
+    }
+  }, []);
 
   // Load user from localStorage on mount
   useEffect(() => {
@@ -65,20 +75,27 @@ function Settings() {
 
     if (!validateForm()) return;
 
-    // Save to localStorage using setUser
+    // check if changes exist
+    const isChanged =
+      JSON.stringify(profile) !== JSON.stringify(originalProfile);
+
+    if (!isChanged) {
+      toast("No changes to save", {
+        icon: "⚠️",
+        style: {
+          background: "#fff",
+          color: "#111",
+        },
+      });
+
+      return;
+    }
+
     setUser(profile);
+    setOriginalProfile(profile);
     setSaved(true);
 
-    // Hide success message after 3 seconds
-    setTimeout(() => setSaved(false), 3000);
-  };
-
-  const handleClearData = () => {
-    if (confirm("Are you sure? This will clear your profile information.")) {
-      setProfile({ name: "", email: "", password: "" });
-      localStorage.removeItem("user");
-      setSaved(false);
-    }
+    toast.success("Changes saved successfully");
   };
 
   return (
@@ -94,30 +111,6 @@ function Settings() {
       </div>
 
       <div className="max-w-3xl space-y-6">
-        {/* Success Message */}
-        {saved && (
-          <div className="flex items-center gap-3 p-4 bg-green-500/10 border border-green-500/50 rounded-lg animate-in fade-in slide-in-from-top-2 duration-300">
-            <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center shrink-0">
-              <svg
-                className="w-5 h-5 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
-            <p className="text-green-500 font-medium">
-              Settings saved successfully!
-            </p>
-          </div>
-        )}
-
         {/* Profile Section */}
         <div className="bg-background-light dark:bg-background-secondary p-8 rounded-2xl border border-border-light dark:border-white/5">
           <h2 className="text-xl font-semibold text-text-primary-light dark:text-text-primary mb-6">

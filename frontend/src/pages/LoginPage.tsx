@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import AuthInput from "@/components/ui/AuthInput";
 import HeroEllipsTwo from "/svg/hero-ellips-two.svg";
 import HeroEllipsThree from "/svg/hero-ellips-three.svg";
+import toast from "react-hot-toast";
 
 function LoginPage() {
   const { login } = useAuthContext();
@@ -37,6 +38,7 @@ function LoginPage() {
     }
     const success = login(formData.email, formData.password);
     if (success) {
+      toast.success("Login successful. Welcome back!");
       navigate("/dashboard");
     } else {
       setError("Invalid email or password");
