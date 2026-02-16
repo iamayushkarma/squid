@@ -32,7 +32,7 @@ function FeatureSection() {
           It should be able to solve the problem
         </p>
       </div>
-      {/* Featur box grid */}
+      {/* Feature box grid */}
       <div className="grid grid-cols-3 gap-6 mt-10">
         {FeatureBoxIcon.map((item, index) => (
           <FeatureBox
@@ -50,7 +50,7 @@ export default FeatureSection;
 
 function FeatureBox({ icon, simpleIcon }: FeatureBoxProp) {
   return (
-    <div className="h-92 rounded-2xl gap-6 flex flex-col justify-center items-center p-6 bg-background-secondary">
+    <div className="h-92 rounded-2xl gap-6 flex flex-col justify-center items-center p-6 bg-background-secondary hover:bg-[#2a2a30] hover:-translate-y-2 transition-all duration-300 cursor-pointer">
       {simpleIcon ? (
         <img src={icon} />
       ) : (
