@@ -23,12 +23,6 @@ function UserDetailModal({ user, onClose }: Props) {
             <h2 className="text-xl font-semibold text-text-primary-light dark:text-text-primary">
               User Details
             </h2>
-            <button
-              onClick={onClose}
-              className="size-8 flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-background/50 transition text-text-secondary-light dark:text-text-secondary"
-            >
-              <X className="size-5" />
-            </button>
           </div>
 
           {/* Body */}
