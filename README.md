@@ -119,11 +119,18 @@ This project consists of three main parts:
 ## 📁 Project Structure
 
 ```
-squid/
+frontend/
 ├── public/
 │   ├── images/
 │   │   ├── logo.ico
 │   │   └── smile.png
+│   ├── screenshots/
+│   │   ├── dashboard-dark.png
+│   │   ├── dashboard-light.png
+│   │   ├── landing-page.png
+│   │   ├── login.png
+│   │   ├── user-modal.png
+│   │   └── users-page.png
 │   └── svg/
 │       ├── alise.svg
 │       ├── chart.svg
@@ -169,11 +176,11 @@ squid/
 │   ├── assets/
 │   │   └── react.svg
 │   ├── components/
-│   │   ├── common/              # Shared components
-│   │   ├── layout/              # Layout components
+│   │   ├── common/
+│   │   ├── layout/
 │   │   │   ├── Footer.tsx
 │   │   │   └── Navbar.tsx
-│   │   ├── sections/            # Landing page sections
+│   │   ├── sections/
 │   │   │   ├── CompaniesSection.tsx
 │   │   │   ├── FeatureSection.tsx
 │   │   │   ├── GetInTouch.tsx
@@ -181,16 +188,16 @@ squid/
 │   │   │   ├── GuideSection.tsx
 │   │   │   ├── HeroSection.tsx
 │   │   │   └── section.css
-│   │   └── ui/                  # Reusable UI components
+│   │   └── ui/
 │   │       ├── AuthInput.tsx
 │   │       ├── Button.tsx
 │   │       ├── ThemeToggler.css
 │   │       └── ThemeToggler.tsx
-│   ├── context/                 # React Context providers
+│   ├── context/
 │   │   ├── AuthContext.tsx
 │   │   └── ThemeContext.tsx
 │   ├── dashboard/
-│   │   ├── components/          # Dashboard-specific components
+│   │   ├── components/
 │   │   │   ├── ModalPortal.tsx
 │   │   │   ├── Pagination.tsx
 │   │   │   ├── SearchBar.tsx
@@ -199,33 +206,33 @@ squid/
 │   │   │   ├── UserListSkeleton.tsx
 │   │   │   ├── UserProfileCard.tsx
 │   │   │   └── UserProfileCardSkeleton.tsx
-│   │   ├── layout/              # Dashboard layout components
+│   │   ├── layout/
 │   │   │   ├── DashboardLayout.tsx
 │   │   │   ├── Sidebar.tsx
 │   │   │   └── Topbar.tsx
-│   │   └── pages/               # Dashboard pages
+│   │   └── pages/
 │   │       ├── DashboardHome.tsx
 │   │       ├── Settings.tsx
 │   │       └── Users.tsx
-│   ├── hooks/                   # Custom React hooks
+│   ├── hooks/
 │   │   ├── useAuthContext.ts
 │   │   ├── useTheme.ts
 │   │   └── useUsers.ts
 │   ├── layout/
 │   │   └── MainLayout.tsx
-│   ├── pages/                   # Public pages
+│   ├── pages/
 │   │   ├── Home.tsx
 │   │   ├── LoginPage.tsx
 │   │   ├── PageNotFound.tsx
 │   │   └── SignUpPage.tsx
-│   ├── routes/                  # Route guards
+│   ├── routes/
 │   │   └── ProtectedRoute.tsx
-│   ├── services/                # API services
+│   ├── services/
 │   │   ├── api.ts
 │   │   └── userService.ts
-│   ├── types/                   # TypeScript type definitions
+│   ├── types/
 │   │   └── user.ts
-│   ├── utils/                   # Utility functions
+│   ├── utils/
 │   │   └── auth.ts
 │   ├── App.tsx
 │   ├── index.css
