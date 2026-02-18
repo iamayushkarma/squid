@@ -174,7 +174,7 @@ function Settings() {
               )}
             </div>
 
-            {/* Info Note - No Box */}
+            {/* Info Note */}
             <div className="flex items-start gap-3 pt-2">
               <Info size={18} className="text-blue-500 mt-0.5 shrink-0" />
               <p className="text-sm text-text-secondary-light dark:text-text-secondary">
@@ -183,16 +183,16 @@ function Settings() {
               </p>
             </div>
 
-            {/* Save Button - Enhanced Design */}
+            {/* Save Button */}
             <div className="pt-4 flex gap-3">
               <button
                 type="submit"
-                className="group relative flex items-center gap-2 px-8 py-3 hover:bg-blue-600 bg-blue-400 text-white font-semibold rounded-lg overflow-hidden transition-all duration-200 active:scale-100"
+                className="group cursor-pointer relative flex items-center gap-2 px-8 py-3 hover:bg-blue-600 bg-blue-400 text-white font-semibold rounded-lg overflow-hidden transition-all duration-200 active:scale-100"
               >
                 <span className="relative z-10">Save Changes</span>
               </button>
 
-              {/* Optional: Reset Button */}
+              {/* Reset Button */}
               <button
                 type="button"
                 onClick={() => {
@@ -200,7 +200,7 @@ function Settings() {
                   if (savedUser) setProfile(savedUser);
                   setErrors({ name: "", email: "" });
                 }}
-                className="px-6 py-3 bg-background-secondary-light dark:bg-background text-text-primary-light dark:text-text-primary font-medium rounded-lg border border-border-light dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/5 transition-all"
+                className="px-6 py-3 cursor-pointer bg-background-secondary-light dark:bg-background text-text-primary-light dark:text-text-primary font-medium rounded-lg border border-border-light dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/5 transition-all"
               >
                 Reset
               </button>

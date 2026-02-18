@@ -1,7 +1,5 @@
 import type { ApiUser } from "@/types/user";
 import ModalPortal from "./ModalPortal";
-import { X } from "lucide-react";
-
 type Props = {
   user: ApiUser;
   onClose: () => void;

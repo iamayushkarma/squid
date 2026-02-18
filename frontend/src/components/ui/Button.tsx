@@ -9,7 +9,7 @@ function Button({ className, text, type }: ButtonProp) {
     <button
       type={type}
       className={`${className}
-  text-[0.875rem] text-text-primary rounded-[.31rem] py-3 px-7
+  text-[0.875rem] text-text-primary cursor-pointer rounded-[.31rem] py-3 px-7
   bg-linear-to-r from-[#FF9898] to-[#8054ff]
   transition-all duration-200 ease-out
   hover:from-[#ff7f7f] hover:to-[#6a3cff]

@@ -21,7 +21,7 @@ function HeroSection() {
       />
 
       <div className="relative z-20">
-        {/* backgtound gradient */}
+        {/* Background gradient */}
         <h1 className="text-text-primary text-[4rem] font-semibold w-3xl leading-20">
           Beautiful Landing Page Design for You
         </h1>

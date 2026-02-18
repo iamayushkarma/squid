@@ -15,7 +15,7 @@ function GetInTouch() {
           <h3 className="font-semibold text-5xl text-text-primary leading-14">
             Fell Free to Join our 15 Days Free Trial
           </h3>
-          <button className="px-7 mt-2 py-3 bg-background hover:bg-background/90 transition-all duration-200 text-text-primary rounded-[5px] text-[.88rem]">
+          <button className="px-7 cursor-pointer mt-2 py-3 bg-background hover:bg-background/90 transition-all duration-200 text-text-primary rounded-[5px] text-[.88rem]">
             Download Template
           </button>
         </div>

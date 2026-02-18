@@ -89,7 +89,7 @@ function FooterLinks({ index, logo }: FooterLinksProp) {
   return (
     <div
       key={index}
-      className="size-10 group bg-background-secondary flex items-center justify-center rounded-2xl"
+      className="size-10 cursor-pointer group bg-background-secondary flex items-center justify-center rounded-2xl"
     >
       <img
         className="group-hover:scale-[1.12] transition-all duration-250"

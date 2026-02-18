@@ -5,7 +5,7 @@ function NotFoundPage() {
   return (
     <section className="relative min-h-svh w-full bg-background flex items-center justify-center">
       <div className="text-center">
-        {/* Big 404 */}
+        {/* 404 */}
         <h1 className="text-[15rem] font-bold text-text-primary leading-none mb-8">
           404
         </h1>

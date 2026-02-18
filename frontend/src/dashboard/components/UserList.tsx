@@ -45,7 +45,7 @@ function UserList({ user, onClick }: UserListProps) {
       <div className="flex items-center">
         <button
           onClick={onClick}
-          className="py-2 text-sm font-medium text-text-secondary-light dark:text-text-secondary hover:text-blue-600 dark:hover:text-blue-400 hover:underline transition"
+          className="py-2 cursor-pointer text-sm font-medium text-text-secondary-light dark:text-text-secondary hover:text-blue-600 dark:hover:text-blue-400 hover:underline transition"
         >
           View More
         </button>
