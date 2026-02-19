@@ -39,7 +39,6 @@ function DashboardHome() {
       value: totalWebsites,
     },
   ];
-  console.log(users);
 
   return (
     <div className="h-full p-10 bg-background-secondary-light dark:bg-background">

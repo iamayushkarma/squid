@@ -5,7 +5,6 @@ import { useUsers } from "@/hooks/useUsers";
 
 function DashboardLayout() {
   const { users } = useUsers();
-  console.log(users);
 
   return (
     <div className="flex text-text-primary h-svh bg-background-light dark:bg-background ">

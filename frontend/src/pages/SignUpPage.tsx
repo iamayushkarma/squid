@@ -33,13 +33,16 @@ function SignUpPage() {
       setError("All fields are required");
       return;
     }
-
+    // Full name validation
+    if (formData.name.trim().split(" ").length < 2) {
+      setError("Please enter full name (first and last name)");
+      return;
+    }
+    // Password validation (must be atleast 6 digits)
     if (formData.password.length < 6) {
       setError("Password must be at least 6 characters");
       return;
     }
-    console.log(formData);
-
     signup(formData);
     navigate("/dashboard");
   };
