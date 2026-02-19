@@ -37,7 +37,7 @@ function Users() {
     return result;
   }, [users, search, sortOrder]);
 
-  // Pagination use filteredUsers.length instead of users.length
+  // Pagination
   const numberOfPages = Math.ceil(filteredUsers.length / PAGE_SIZE);
   const start = currentPage * PAGE_SIZE;
   const end = start + PAGE_SIZE;
