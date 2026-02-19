@@ -103,14 +103,14 @@ function Users() {
                     onClick={() => handleSortSelect("asc")}
                     className="w-full text-left px-2.5 py-2 text-sm
                   hover:bg-gray-200 dark:hover:bg-background/50
-                    focus:outline-none focus:bg-gray-200 dark:focus:bg-background/50"
+                    focus:outline-none cursor-pointer focus:bg-gray-200 dark:focus:bg-background/50"
                   >
                     From A-Z
                   </button>
 
                   <button
                     onClick={() => handleSortSelect("desc")}
-                    className="w-full text-left px-2.5 py-2 text-sm
+                    className="w-full cursor-pointer text-left px-2.5 py-2 text-sm
                     hover:bg-gray-200 dark:hover:bg-background/50
                     focus:outline-none focus:bg-gray-200 dark:focus:bg-background/50"
                   >
